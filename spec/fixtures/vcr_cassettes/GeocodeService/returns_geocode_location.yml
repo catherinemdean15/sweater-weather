@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=<mapquest_api_key>&location=GrandRapids,MI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Mar 2021 18:54:28 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1750'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Sun, 07 Mar 2021 18:54:28 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=761ACC1683A45A1F2A8FC680397DA988; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"GrandRapids,MI"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Grand
+        Rapids","adminArea5Type":"City","adminArea4":"Kent County","adminArea4Type":"County","adminArea3":"MI","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282039661","unknownInput":"","type":"s","latLng":{"lat":42.965446,"lng":-85.670209},"displayLatLng":{"lat":42.965446,"lng":-85.670209},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_api_key>&type=map&size=225,160&locations=42.965446,-85.670209|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1545467917"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Grand
+        Rapids","adminArea5Type":"City","adminArea4":"Ontonagon County","adminArea4Type":"County","adminArea3":"MI","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"283492193","unknownInput":"","type":"s","latLng":{"lat":46.765775,"lng":-89.275698},"displayLatLng":{"lat":46.765775,"lng":-89.275698},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_api_key>&type=map&size=225,160&locations=46.765775,-89.275698|marker-sm-50318A-2&scalebar=true&zoom=12&rand=-63463635"}]}]}'
+  recorded_at: Sun, 07 Mar 2021 18:54:28 GMT
+recorded_with: VCR 6.0.0
