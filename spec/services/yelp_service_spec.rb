@@ -4,7 +4,7 @@ describe YelpService do
   it 'returns business information', :vcr do
     location = 'Denver,CO'
     term = 'donut'
-    data = YelpService.search_business(location, term)
+    data = YelpService.search_restaurant(location, term)
     expect(data).to have_key(:businesses)
     expect(data[:businesses]).to be_an(Array)
     expect(data[:businesses].count).to eq(1)
