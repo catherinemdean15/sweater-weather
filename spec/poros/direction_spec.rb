@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DailyWeather do
+RSpec.describe Direction do
   it 'exists' do
     data = { route: { hasTollRoad: false,
                       hasBridge: true,
