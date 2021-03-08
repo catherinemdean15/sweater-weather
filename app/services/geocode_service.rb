@@ -8,6 +8,15 @@ class GeocodeService
       parse_data(response)
     end
 
+    def search_directions(start, destination)
+      response = conn.get('/directions/v2/route') do |req|
+        req.params['key'] = ENV['mapquest_api_key']
+        req.params['from'] = start
+        req.params['to'] = destination
+      end
+      parse_data(response)
+    end
+
     private
 
     def conn
