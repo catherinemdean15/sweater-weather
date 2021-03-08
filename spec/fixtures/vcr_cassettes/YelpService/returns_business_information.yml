@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=Denver,CO&open_now=true&term=donut
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <yelp_api_key>
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 1898600877742d03
+      Ratelimit-Remaining:
+      - '4996'
+      Ratelimit-Dailylimit:
+      - '5000'
+      Server:
+      - envoy
+      Ratelimit-Resettime:
+      - '2021-03-09T00:00:00+00:00'
+      X-Routing-Service:
+      - routing-main--uswest2-8665dfcd87-hc588; site=public_api_v3
+      X-B3-Sampled:
+      - '0'
+      X-Proxied:
+      - 10-69-95-86-uswest2aprod
+      X-Extlb:
+      - 10-69-95-86-uswest2aprod
+      Cache-Control:
+      - max-age=0, no-store, private, no-transform
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Mon, 08 Mar 2021 16:12:28 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-den8252-DEN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"businesses": [{"id": "syz9gCaOMDlXVsedOh7GKg", "alias": "the-doughnut-club-denver-denver",
+        "name": "The Doughnut Club - Denver", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/qRqhmMMgfS_j0dOaJS593g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/the-doughnut-club-denver-denver?adjust_creative=exsKdI4IsMWYS3_DdjaKlg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=exsKdI4IsMWYS3_DdjaKlg",
+        "review_count": 42, "categories": [{"alias": "donuts", "title": "Donuts"}],
+        "rating": 4.5, "coordinates": {"latitude": 39.764052, "longitude": -104.98112},
+        "transactions": ["pickup", "delivery"], "location": {"address1": "3040 Blake
+        St", "address2": "Ste 151", "address3": "", "city": "Denver", "zip_code":
+        "80205", "country": "US", "state": "CO", "display_address": ["3040 Blake St",
+        "Ste 151", "Denver, CO 80205"]}, "phone": "+17206437996", "display_phone":
+        "(720) 643-7996", "distance": 3316.313768934375}], "total": 354, "region":
+        {"center": {"longitude": -104.97024536132812, "latitude": 39.73552421220229}}}'
+  recorded_at: Mon, 08 Mar 2021 16:12:28 GMT
+recorded_with: VCR 6.0.0
