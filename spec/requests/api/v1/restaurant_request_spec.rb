@@ -22,7 +22,7 @@ describe 'Restaurant API' do
     expect(trip_info[:attributes][:forecast]).to have_key(:summary)
     expect(trip_info[:attributes][:forecast][:summary]).to be_a(String)
     expect(trip_info[:attributes][:forecast]).to have_key(:temperature)
-    expect(trip_info[:attributes][:forecast][:temperature]).to be_a(String)
+    expect(trip_info[:attributes][:forecast][:temperature]).to be_a(Float)
 
     expect(trip_info[:attributes]).to have_key(:restaurant)
     expect(trip_info[:attributes][:restaurant]).to be_a(Hash)
