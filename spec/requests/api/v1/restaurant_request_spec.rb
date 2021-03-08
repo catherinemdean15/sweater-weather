@@ -35,4 +35,19 @@ describe 'Restaurant API' do
     expect(trip_info[:attributes]).to_not have_key(:is_open)
     expect(trip_info[:attributes][:restaurant]).to_not be_an(Array)
   end
+
+  it 'returns an error when params are missing' do
+    get api_v1_restaurant_index_path({ start: '', destination: '', food: '' })
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error).to have_key(:error)
+    expect(error[:error]).to eq('params must include start, destination, and food')
+  end
+
+  xit 'returns an error if destination params are incorrect', :vcr do
+    # this sad path testing is incomplete
+    get api_v1_restaurant_index_path({ start: 'aslskcnsd', destination: 'a9sdfjk', food: 'pizza' })
+    error = JSON.parse(response.body, symbolize_names: true)
+    expect(error[:error]).to eq('destination cannot be found')
+  end
 end
