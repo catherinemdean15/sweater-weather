@@ -53,4 +53,22 @@ describe 'User creation API' do
     expect(response.status).to eq(401)
     expect(error[:error]).to eq('passwords do not match')
   end
+
+  it 'returns an error if email is already in use', :vcr do
+    data = {
+          "email": "whatever@example.com",
+          "password": "password",
+          "password_confirmation": "password"
+        }
+    headers = { "CONTENT_TYPE" => "application/json" }
+    post api_v1_users_path, params: data
+    expect(response).to be_successful
+
+    post api_v1_users_path, params: data
+    expect(response).to_not be_successful
+    
+    error = JSON.parse(response.body, symbolize_names: true)
+    expect(response.status).to eq(400)
+    expect(error[:error]).to eq("unable to register new user")
+  end
 end
