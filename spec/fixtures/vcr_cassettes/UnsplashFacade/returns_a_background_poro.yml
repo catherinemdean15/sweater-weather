@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=<unsplash_api_key>&per_page=1&query=St.Louis,MO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1022'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=<unsplash_api_key>&page=494&per_page=1&query=St.Louis%2CMO>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=<unsplash_api_key>&page=2&per_page=1&query=St.Louis%2CMO>;
+        rel="next"
+      X-Total:
+      - '494'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"42f2857bc5867b988c739be001e9f5c3"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '46'
+      X-Request-Id:
+      - 2b2d9464-91c8-4703-9c40-ce247d70238c
+      X-Runtime:
+      - '0.397186'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 09 Mar 2021 01:51:22 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-dca17767-DCA, cache-den8276-DEN
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1615254682.134339,VS0,VE451
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":494,"total_pages":494,"results":[{"id":"WWl6xaSHFIo","created_at":"2019-01-29T23:56:42-05:00","updated_at":"2021-03-08T12:07:07-05:00","promoted_at":null,"width":5456,"height":3632,"color":"#c0c0d9","blur_hash":"LnI5xxRjbIfQ_4ozM{ofIUWBRiay","description":"Weather
+        radar atop a mountain on a foggy afternoon","alt_description":"white concrete
+        building","urls":{"raw":"https://images.unsplash.com/photo-1548824049-12fcd2c576a3?ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxTdC5Mb3VpcyxNT3xlbnwwfHx8fDE2MTUyNTQ2ODI\u0026ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1548824049-12fcd2c576a3?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxTdC5Mb3VpcyxNT3xlbnwwfHx8fDE2MTUyNTQ2ODI\u0026ixlib=rb-1.2.1\u0026q=85","regular":"https://images.unsplash.com/photo-1548824049-12fcd2c576a3?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxTdC5Mb3VpcyxNT3xlbnwwfHx8fDE2MTUyNTQ2ODI\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080","small":"https://images.unsplash.com/photo-1548824049-12fcd2c576a3?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxTdC5Mb3VpcyxNT3xlbnwwfHx8fDE2MTUyNTQ2ODI\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=400","thumb":"https://images.unsplash.com/photo-1548824049-12fcd2c576a3?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxTdC5Mb3VpcyxNT3xlbnwwfHx8fDE2MTUyNTQ2ODI\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=200"},"links":{"self":"https://api.unsplash.com/photos/WWl6xaSHFIo","html":"https://unsplash.com/photos/WWl6xaSHFIo","download":"https://unsplash.com/photos/WWl6xaSHFIo/download","download_location":"https://api.unsplash.com/photos/WWl6xaSHFIo/download?ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxTdC5Mb3VpcyxNT3xlbnwwfHx8fDE2MTUyNTQ2ODI"},"categories":[],"likes":3,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"qpPcgmIB4lw","updated_at":"2021-03-08T10:45:28-05:00","username":"kelvinyan","name":"Kelvin
+        Yan","first_name":"Kelvin","last_name":"Yan","twitter_username":null,"portfolio_url":"Https://bravoka.github.io","bio":"The
+        more I learn, the less I realize I know.","location":null,"links":{"self":"https://api.unsplash.com/users/kelvinyan","html":"https://unsplash.com/@kelvinyan","photos":"https://api.unsplash.com/users/kelvinyan/photos","likes":"https://api.unsplash.com/users/kelvinyan/likes","portfolio":"https://api.unsplash.com/users/kelvinyan/portfolio","following":"https://api.unsplash.com/users/kelvinyan/following","followers":"https://api.unsplash.com/users/kelvinyan/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1575435904268-4b268ef06c98image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1575435904268-4b268ef06c98image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1575435904268-4b268ef06c98image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"bravo_k","total_collections":1,"total_likes":30,"total_photos":40,"accepted_tos":true,"for_hire":false},"tags":[{"type":"search","title":"architecture"},{"type":"search","title":"building"},{"type":"search","title":"planetarium"}]}]}'
+  recorded_at: Tue, 09 Mar 2021 01:51:22 GMT
+recorded_with: VCR 6.0.0
