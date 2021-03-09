@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Background API' do
   it 'returns backgrounds', :vcr do
-    get api_v1_backgrounds_index_path({ location: 'Denver,CO' })
+    get api_v1_backgrounds_path({ location: 'Denver,CO' })
     expect(response).to be_successful
 
     background = JSON.parse(response.body, symbolize_names: true)[:data]

@@ -6,7 +6,6 @@ describe UnsplashFacade do
     background = UnsplashFacade.get_background(location)
     expect(background).to be_a(Background)
     expect(background.image).to be_a(Hash)
-    expect(background.description).to be_a(String)
     expect(background.credit).to be_a(Hash)
   end
 end
