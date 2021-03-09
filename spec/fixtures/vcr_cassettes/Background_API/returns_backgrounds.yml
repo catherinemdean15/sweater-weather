@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=<unsplash_api_key>&per_page=1&query=Denver,CO%20aerial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2423'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Link:
+      - <https://api.unsplash.com/search/photos?client_id=<unsplash_api_key>&page=10000&per_page=1&query=Denver%2CCO+aerial>;
+        rel="last", <https://api.unsplash.com/search/photos?client_id=<unsplash_api_key>&page=2&per_page=1&query=Denver%2CCO+aerial>;
+        rel="next"
+      X-Total:
+      - '10000'
+      X-Per-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"196ca6b691a3bf41be5deec06113fbc4"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '48'
+      X-Request-Id:
+      - 11ee3fad-450e-4567-84c4-def632777f8a
+      X-Runtime:
+      - '0.175471'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 09 Mar 2021 02:21:44 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-dca17724-DCA, cache-den8279-DEN
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1615256504.941849,VS0,VE231
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":10000,"total_pages":10000,"results":[{"id":"GEq30mWGk74","created_at":"2020-04-17T00:07:25-04:00","updated_at":"2021-03-08T09:15:30-05:00","promoted_at":"2020-11-02T09:09:03-05:00","width":4750,"height":5568,"color":"#262626","blur_hash":null,"description":"Skyscraper
+        lit up with giant heart for health care workers and front liners during Covid-19
+        stay at home policy.","alt_description":"city buildings during night time","urls":{"raw":"https://images.unsplash.com/photo-1587095711790-a642f7f5540c?ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWx8ZW58MHx8fHwxNjE1MjU2NTA0\u0026ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1587095711790-a642f7f5540c?crop=entropy\u0026cs=srgb\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWx8ZW58MHx8fHwxNjE1MjU2NTA0\u0026ixlib=rb-1.2.1\u0026q=85","regular":"https://images.unsplash.com/photo-1587095711790-a642f7f5540c?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWx8ZW58MHx8fHwxNjE1MjU2NTA0\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=1080","small":"https://images.unsplash.com/photo-1587095711790-a642f7f5540c?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWx8ZW58MHx8fHwxNjE1MjU2NTA0\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=400","thumb":"https://images.unsplash.com/photo-1587095711790-a642f7f5540c?crop=entropy\u0026cs=tinysrgb\u0026fit=max\u0026fm=jpg\u0026ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWx8ZW58MHx8fHwxNjE1MjU2NTA0\u0026ixlib=rb-1.2.1\u0026q=80\u0026w=200"},"links":{"self":"https://api.unsplash.com/photos/GEq30mWGk74","html":"https://unsplash.com/photos/GEq30mWGk74","download":"https://unsplash.com/photos/GEq30mWGk74/download","download_location":"https://api.unsplash.com/photos/GEq30mWGk74/download?ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWx8ZW58MHx8fHwxNjE1MjU2NTA0"},"categories":[],"likes":39,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"Yw2tv1ypBq8","updated_at":"2021-03-08T01:26:46-05:00","username":"brende","name":"Josh
+        Berendes","first_name":"Josh","last_name":"Berendes","twitter_username":"brende_films","portfolio_url":"http://www.joshberendes.com","bio":"I''m
+        a full time filmmaker, drone pilot, and content creator focusing on the entertainment
+        and travel industries. \r\nInsta: @brende_films  Please tag me if you can,
+        always interested to see where these turn up!","location":"Orlando | Denver","links":{"self":"https://api.unsplash.com/users/brende","html":"https://unsplash.com/@brende","photos":"https://api.unsplash.com/users/brende/photos","likes":"https://api.unsplash.com/users/brende/likes","portfolio":"https://api.unsplash.com/users/brende/portfolio","following":"https://api.unsplash.com/users/brende/following","followers":"https://api.unsplash.com/users/brende/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1591809304990-aecb64dc6df2image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1591809304990-aecb64dc6df2image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1591809304990-aecb64dc6df2image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"brende_films","total_collections":0,"total_likes":0,"total_photos":59,"accepted_tos":true,"for_hire":false},"tags":[{"type":"landing_page","title":"nature","source":{"ancestry":{"type":{"slug":"images","pretty_slug":"Images"},"category":{"slug":"nature","pretty_slug":"Nature"}},"title":"Nature
+        Images","subtitle":"Download free nature images","description":"Nature produces
+        the most astoundingly beautiful images: the swirling lava of a volcano, palm
+        trees against a blue sky, snow-capped mountains towering above. Unsplash has
+        magnificent , high-quality photos of all the delights that nature has to offer.","meta_title":"100+
+        Nature Pictures | Download Free Images \u0026 Stock Photos on Unsplash","meta_description":"Choose
+        from hundreds of free nature pictures. Download HD nature photos for free
+        on Unsplash.","cover_photo":{"id":"VE5FRc7uiC4","created_at":"2018-10-15T04:58:20-04:00","updated_at":"2021-02-28T11:04:39-05:00","promoted_at":"2018-10-15T08:23:00-04:00","width":4640,"height":3480,"color":"#262640","blur_hash":"L21o;CogI7WARNaxt9j]Mvaxxwof","description":"lost
+        in the sky","alt_description":"star in space","urls":{"raw":"https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb","regular":"https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max","small":"https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max","thumb":"https://images.unsplash.com/photo-1539593395743-7da5ee10ff07?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max"},"links":{"self":"https://api.unsplash.com/photos/VE5FRc7uiC4","html":"https://unsplash.com/photos/VE5FRc7uiC4","download":"https://unsplash.com/photos/VE5FRc7uiC4/download","download_location":"https://api.unsplash.com/photos/VE5FRc7uiC4/download"},"categories":[],"likes":107,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"PvaYY7qgvqU","updated_at":"2021-03-01T07:40:17-05:00","username":"akin","name":"Akin","first_name":"Akin","last_name":null,"twitter_username":"pausyworld","portfolio_url":"https://akincakiner.com/","bio":"Create
+        The Moment","location":"almelo","links":{"self":"https://api.unsplash.com/users/akin","html":"https://unsplash.com/@akin","photos":"https://api.unsplash.com/users/akin/photos","likes":"https://api.unsplash.com/users/akin/likes","portfolio":"https://api.unsplash.com/users/akin/portfolio","following":"https://api.unsplash.com/users/akin/following","followers":"https://api.unsplash.com/users/akin/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1578436703762-5a9ab2f10de8image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1578436703762-5a9ab2f10de8image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1578436703762-5a9ab2f10de8image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"akincakiner","total_collections":0,"total_likes":56,"total_photos":276,"accepted_tos":true}}}},{"type":"search","title":"outdoors"},{"type":"landing_page","title":"scenery","source":{"ancestry":{"type":{"slug":"wallpapers","pretty_slug":"HD
+        Wallpapers"},"category":{"slug":"nature","pretty_slug":"Nature"},"subcategory":{"slug":"scenery","pretty_slug":"Scenery"}},"title":"HD
+        Scenery Wallpapers","subtitle":"Download Free Scenery Wallpapers","description":"Choose
+        from a curated selection of scenery wallpapers for your mobile and desktop
+        screens. Always free on Unsplash.","meta_title":"Scenery Wallpapers: Free
+        HD Download [500+ HQ] | Unsplash","meta_description":"Choose from hundreds
+        of free scenery wallpapers. Download HD wallpapers for free on Unsplash.","cover_photo":{"id":"txtWlEUyW2Y","created_at":"2017-07-17T16:21:51-04:00","updated_at":"2021-03-05T14:01:59-05:00","promoted_at":"2017-07-19T08:00:45-04:00","width":6000,"height":4000,"color":"#d9d9f3","blur_hash":"L{Ez8JR.WCaxyGaeWVa$RjWCoJjt","description":null,"alt_description":"brown
+        mountain under clear blue sky","urls":{"raw":"https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1","full":"https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1\u0026q=85\u0026fm=jpg\u0026crop=entropy\u0026cs=srgb","regular":"https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=1080\u0026fit=max","small":"https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=400\u0026fit=max","thumb":"https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=entropy\u0026cs=tinysrgb\u0026w=200\u0026fit=max"},"links":{"self":"https://api.unsplash.com/photos/txtWlEUyW2Y","html":"https://unsplash.com/photos/txtWlEUyW2Y","download":"https://unsplash.com/photos/txtWlEUyW2Y/download","download_location":"https://api.unsplash.com/photos/txtWlEUyW2Y/download"},"categories":[],"likes":282,"liked_by_user":false,"current_user_collections":[],"sponsorship":null,"user":{"id":"qC-urTD_62E","updated_at":"2021-03-05T17:15:47-05:00","username":"huguesdb","name":"Hugues
+        de BUYER-MIMEURE","first_name":"Hugues","last_name":"de BUYER-MIMEURE","twitter_username":null,"portfolio_url":"http://instagram.com/huguesdbm/","bio":"Hi,
+        I''m a french photographer with Sony Alpha 7III based in Lyon, France.","location":"Lyon","links":{"self":"https://api.unsplash.com/users/huguesdb","html":"https://unsplash.com/@huguesdb","photos":"https://api.unsplash.com/users/huguesdb/photos","likes":"https://api.unsplash.com/users/huguesdb/likes","portfolio":"https://api.unsplash.com/users/huguesdb/portfolio","following":"https://api.unsplash.com/users/huguesdb/following","followers":"https://api.unsplash.com/users/huguesdb/followers"},"profile_image":{"small":"https://images.unsplash.com/profile-1500389500141-d453d040335c?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32","medium":"https://images.unsplash.com/profile-1500389500141-d453d040335c?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=64\u0026w=64","large":"https://images.unsplash.com/profile-1500389500141-d453d040335c?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=128\u0026w=128"},"instagram_username":"huguesdbm","total_collections":0,"total_likes":44,"total_photos":62,"accepted_tos":true,"for_hire":false}}}}]}]}'
+  recorded_at: Tue, 09 Mar 2021 02:21:44 GMT
+recorded_with: VCR 6.0.0
