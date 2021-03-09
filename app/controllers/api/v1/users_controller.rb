@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
       render json: UserSerializer.new(user), status: 201
     else
       (render json: {error: 'passwords do not match'}, status: 401 unless matching_password?) ||
-      (render json: {error: 'unable to register new user'}, status: 400)
+      (render json: {error: 'an unused email must be provided to register'}, status: 400)
     end
   end
 
