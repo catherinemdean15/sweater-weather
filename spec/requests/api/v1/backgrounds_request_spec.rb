@@ -19,4 +19,12 @@ describe 'Background API' do
 
   end
 
+  it 'returns an error if params are missing', :vcr do
+    get api_v1_backgrounds_path({ location: '' })
+    expect(response).to be_successful
+
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error[:error]).to eq('location must be included')
+  end
 end
