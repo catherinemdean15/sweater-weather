@@ -8,6 +8,7 @@ end
 ruby '2.5.3'
 
 gem 'bootsnap'
+gem 'bcrypt'
 gem 'coffee-rails', '~> 4.2'
 gem 'faraday'
 gem 'fast_jsonapi'

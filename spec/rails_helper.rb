@@ -71,3 +71,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('<unsplash_api_key>') { ENV['unsplash_api_key'] }
   config.configure_rspec_metadata!
 end
+
+RSpec.configure do |config|
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+end
