@@ -36,7 +36,7 @@ describe 'User creation API' do
 
     error = JSON.parse(response.body, symbolize_names: true)
     expect(response.status).to eq(400)
-    expect(error[:error]).to eq("unable to register new user")
+    expect(error[:error]).to eq("an unused email must be provided to register")
   end
 
   it 'returns an error if passwords do not match', :vcr do
@@ -66,9 +66,9 @@ describe 'User creation API' do
 
     post api_v1_users_path, params: data
     expect(response).to_not be_successful
-    
+
     error = JSON.parse(response.body, symbolize_names: true)
     expect(response.status).to eq(400)
-    expect(error[:error]).to eq("unable to register new user")
+    expect(error[:error]).to eq("an unused email must be provided to register")
   end
 end

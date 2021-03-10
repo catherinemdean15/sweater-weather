@@ -130,4 +130,13 @@ describe 'Forecast API' do
     expect(hourly_weather).to_not have_key(:clouds)
     expect(hourly_weather).to_not have_key(:pressure)
   end
+
+  it 'returns an error if params are missing', :vcr do
+    get api_v1_forecast_index_path({ location: '' })
+    expect(response).to_not be_successful
+
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error[:error]).to eq('location must be included')
+  end
 end
