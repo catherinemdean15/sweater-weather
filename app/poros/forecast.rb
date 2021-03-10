@@ -6,13 +6,13 @@ class Forecast
     @current_weather = CurrentWeather.new(data[:current])
     @hourly_weather = data[:hourly].first(8).map { |hour| HourlyWeather.new(hour) }
     @daily_weather = data[:daily].first(5).map { |day| DailyWeather.new(day) }
-    # @trip_weather = data[:hourly].map { |hour| HourlyWeather.new(hour) }
+    @trip_weather = data[:hourly].map { |hour| HourlyWeather.new(hour) }
   end
 
   def find_weather(travel_time)
     if travel_time != "impossible"
       arrival_time = arrival_hour(travel_time)
-      arrival_temp = hourly_weather.find do |hour|
+      arrival_temp = @trip_weather.find do |hour|
         hour.time.split(":")[0] == arrival_time
       end
       {temperature: arrival_temp.temperature, conditions: arrival_temp.conditions}
