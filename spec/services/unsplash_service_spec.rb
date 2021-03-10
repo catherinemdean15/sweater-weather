@@ -3,7 +3,8 @@ require 'rails_helper'
 describe UnsplashService do
   it 'returns image', :vcr do
     location = 'GrandRapids,MI'
-    data = UnsplashService.find_image(location)
+    weather = 'snow flurries'
+    data = UnsplashService.find_image(location, weather)
 
     expect(data[:results]).to be_an(Array)
     expect(data[:results].count).to eq(1)
