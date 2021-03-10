@@ -3,7 +3,8 @@ require 'rails_helper'
 describe ForecastFacade do
   it 'returns a forecast poro', :vcr do
     geocode = Geocode.new({ lat: 39.738453, lng: -104.984853 })
-    data = ForecastFacade.get_forecast(geocode)
+    units = 'imperial'
+    data = ForecastFacade.get_forecast(geocode, units)
 
     expect(data).to be_a(Forecast)
     expect(data.id).to eq(nil)

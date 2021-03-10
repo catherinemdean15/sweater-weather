@@ -10,11 +10,11 @@ describe 'Background API' do
     expect(background).to be_a(Hash)
     expect(background[:id]).to eq(nil)
     expect(background[:type]).to eq('image')
-    expect(background[:attributes][:image][:url]).to eq("https://images.unsplash.com/photo-1606619854196-d123ca4cd096?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMTMzNjl8MHwxfHNlYXJjaHwxfHxEZW52ZXIsQ08lMjBhZXJpYWwlMjBvdmVyY2FzdCUyMGNsb3Vkc3xlbnwwfHx8fDE2MTUzNDU1ODA&ixlib=rb-1.2.1&q=85")
+    expect(background[:attributes][:image][:url]).to be_a(String)
     expect(background[:attributes][:image][:location]).to eq("Denver,CO")
-    expect(background[:attributes][:description]).to eq("Aerial panoramic view of West High School")
+    expect(background[:attributes][:description]).to eq(nil)
     expect(background[:attributes][:credit][:source]).to eq("Unsplash API")
-    expect(background[:attributes][:credit][:author]).to eq("andrewcoop")
+    expect(background[:attributes][:credit][:author]).to eq("serjosoza")
 
   end
 

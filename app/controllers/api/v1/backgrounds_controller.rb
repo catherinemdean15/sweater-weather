@@ -4,7 +4,7 @@ class Api::V1::BackgroundsController < ApplicationController
       render json: {error: 'location must be included'}
     else
     geocode = GeocodeFacade.get_geocode(params[:location])
-    weather = ForecastFacade.get_forecast(geocode).current_weather.conditions
+    weather = ForecastFacade.get_forecast(geocode, (params[:units] if params[:units])).current_weather.conditions
     background= UnsplashFacade.get_background(params[:location], weather)
     render json: BackgroundSerializer.new(background)
     end

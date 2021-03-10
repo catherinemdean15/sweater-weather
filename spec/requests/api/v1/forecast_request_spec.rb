@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Forecast API' do
   it 'returns weather information', :vcr do
-    get api_v1_forecast_index_path({ location: 'Denver,CO' })
+    get api_v1_forecast_index_path({ location: 'Denver,CO', units: 'imperial' })
     expect(response).to be_successful
 
     forecast = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -22,7 +22,7 @@ describe 'Forecast API' do
   end
 
   it 'returns current weather information', :vcr do
-    get api_v1_forecast_index_path({ location: 'Denver,CO' })
+    get api_v1_forecast_index_path({ location: 'Denver,CO', units: 'imperial' })
     expect(response).to be_successful
 
     current_weather = JSON.parse(response.body, symbolize_names: true)[:data][:attributes][:current_weather]
@@ -65,7 +65,7 @@ describe 'Forecast API' do
   end
 
   it 'returns the daily weather', :vcr do
-    get api_v1_forecast_index_path({ location: 'Denver,CO' })
+    get api_v1_forecast_index_path({ location: 'Denver,CO', units: 'imperial' })
     expect(response).to be_successful
 
     weather = JSON.parse(response.body, symbolize_names: true)[:data][:attributes][:daily_weather]
@@ -103,7 +103,7 @@ describe 'Forecast API' do
   end
 
   it 'returns the hourly weather', :vcr do
-    get api_v1_forecast_index_path({ location: 'Denver,CO' })
+    get api_v1_forecast_index_path({ location: 'Denver,CO', units: 'imperial'})
     expect(response).to be_successful
 
     weather = JSON.parse(response.body, symbolize_names: true)[:data][:attributes][:hourly_weather]
@@ -132,11 +132,31 @@ describe 'Forecast API' do
   end
 
   it 'returns an error if params are missing', :vcr do
-    get api_v1_forecast_index_path({ location: '' })
+    get api_v1_forecast_index_path({ location: '', units: 'imperial' })
     expect(response).to_not be_successful
 
     error = JSON.parse(response.body, symbolize_names: true)
 
     expect(error[:error]).to eq('location must be included')
+  end
+
+  it 'returns weather information with metric', :vcr do
+    get api_v1_forecast_index_path({ location: 'Denver,CO', units: 'metric' })
+    expect(response).to be_successful
+
+    forecast = JSON.parse(response.body, symbolize_names: true)[:data]
+
+    expect(forecast[:id]).to eq(nil)
+    expect(forecast[:type]).to eq('forecast')
+
+    expect(forecast[:attributes]).to have_key(:current_weather)
+    expect(forecast[:attributes][:current_weather]).to be_an(Hash)
+    expect(forecast[:attributes]).to have_key(:daily_weather)
+    expect(forecast[:attributes][:daily_weather]).to be_a(Array)
+    expect(forecast[:attributes]).to have_key(:hourly_weather)
+    expect(forecast[:attributes][:hourly_weather]).to be_an(Array)
+
+    expect(forecast[:attributes]).to_not have_key(:minutely_weather)
+    expect(forecast[:attributes]).to_not have_key(:alerts)
   end
 end
