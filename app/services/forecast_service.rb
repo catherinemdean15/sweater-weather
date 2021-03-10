@@ -1,12 +1,12 @@
 class ForecastService
   class << self
-    def search_forecast(geocode)
+    def search_forecast(geocode, units)
       response = conn.get('/data/2.5/onecall?') do |req|
         req.params['appid'] = ENV['openweather_api_key']
         req.params['lat'] = geocode.latitude
         req.params['lon'] = geocode.longitude
         req.params['exclude'] = 'minutely,alerts'
-        req.params['units'] = 'imperial'
+        req.params['units'] = units
       end
       parse_data(response)
     end
