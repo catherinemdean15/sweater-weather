@@ -6,6 +6,7 @@ class Forecast
     @current_weather = CurrentWeather.new(data[:current])
     @hourly_weather = data[:hourly].first(8).map { |hour| HourlyWeather.new(hour) }
     @daily_weather = data[:daily].first(5).map { |day| DailyWeather.new(day) }
+    # @trip_weather = data[:hourly].map { |hour| HourlyWeather.new(hour) }
   end
 
   def find_weather(travel_time)
