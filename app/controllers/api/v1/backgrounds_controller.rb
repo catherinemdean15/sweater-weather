@@ -1,6 +1,6 @@
 class Api::V1::BackgroundsController < ApplicationController
   def index
-    if params[:location].empty?
+    if params[:location].nil? || params[:location].empty? 
       render json: {error: 'location must be included'}
     else
     geocode = GeocodeFacade.get_geocode(params[:location])

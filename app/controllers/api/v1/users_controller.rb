@@ -2,7 +2,6 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if matching_password? && user.save
-      user.update({api_key: ApiKey.generator})
       render json: UserSerializer.new(user), status: 201
     else
       (render json: {error: 'passwords do not match'}, status: 401 unless matching_password?) ||
