@@ -1,0 +1,19 @@
+language: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+cache:
+- bundler
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: arRow373LEKGZTRB7f78EluK7H1/djNHRKZoepd7gM1tvZss4Nx103mzfvcrJ0YItSbyIbZN/31gu6nmdzR53Or7ZFt7Q1MIeF9/Mw16b8BBKA9/TzRuWOOUCiza+j56FoqrXV/vmCb3NOyy4koMY++kC/qvTxS4YqHX40LXb6uew1WAsyAWEHeppG464nJnw6b+X9aabOBGWkq276e2TnEc1zqbKXqDE1WElHWC3Y2DBgxDox+7of+8leyPSuVzxVFyF67eI3Fn63TSolwAK+rsXE634Wj+/xFMg6jVSHIkuGE9FDTKDuPcb55XR5B3kSQW6e4l/KAJvhFamsNDqy8wJFA0W0EKLPB6QHd86XAmmptWIDtAfp6t+zpkkvou7h2dm3xVpvvnmJewbB7MflrjUqWgv1Obb5NAcrcvLpBbAJetiXyL0aXoTiGHZvhl/J3tzNn5dQGGweJIAYc4K6t5zbPX0d/dAURhY7TDUfUSiy4Y3Z+Ip/Z+afaDdZhZl8Yyb7co3GWijTB2gkwHGH7ulh9q6g+wV/Tgz95KAwh6o2bFqsCO6ZhvuPljCVrx3ep5J7Hw570ncVKno+/2DF7xBlK/b1SwvglC8xaWPTnU7MPOhtUQE55S50VHVWpJYYKCvhRy5YA/Ix+4s5CSbxA5DF3wopPvQeOxhOFAy/g=
+  app: jules-api
+  run: rails db:migrate
+  on:
+    branch: main
+  skip_cleanup: 'true'
