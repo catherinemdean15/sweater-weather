@@ -254,31 +254,31 @@ RSpec.describe RoadTrip do
                        clouds: 0,
                        pop: 0,
                        uvi: 5 }] }
-    origin = "Denver,CO"
-    destination = "Pueblo,CO"
+    origin = 'Denver,CO'
+    destination = 'Pueblo,CO'
     travel_time = Direction.new({ route: { hasTollRoad: false,
-                      hasBridge: true,
-                      boundingBox: { lr: { lng: -80.139053, lat: 25.774994 },
-                                     ul: { lng: -80.199677, lat: 26.011757 } },
-                      distance: 19.709,
-                      hasTimedRestriction: false,
-                      hasTunnel: false,
-                      hasHighway: true,
-                      computedWaypoints: [],
-                      routeError: { errorCode: -400, message: '' },
-                      formattedTime: '00:25:45',
-                      sessionId: '60465b35-034b-5f21-02b4-3500-0a439d50b801',
-                      hasAccessRestriction: false,
-                      realTime: 1714,
-                      hasSeasonalClosure: false,
-                      hasCountryCross: false,
-                      fuelUsed: 0.89,
-                      legs: [{ hasTollRoad: false,
-                               hasBridge: true,
-                               destNarrative: 'Proceed to HOLLYWOOD, FL.',
-                               distance: 19.709,
-                               hasTimedRestriction: false,
-                               hasTunnel: false }] } })
+                                           hasBridge: true,
+                                           boundingBox: { lr: { lng: -80.139053, lat: 25.774994 },
+                                                          ul: { lng: -80.199677, lat: 26.011757 } },
+                                           distance: 19.709,
+                                           hasTimedRestriction: false,
+                                           hasTunnel: false,
+                                           hasHighway: true,
+                                           computedWaypoints: [],
+                                           routeError: { errorCode: -400, message: '' },
+                                           formattedTime: '00:25:45',
+                                           sessionId: '60465b35-034b-5f21-02b4-3500-0a439d50b801',
+                                           hasAccessRestriction: false,
+                                           realTime: 1714,
+                                           hasSeasonalClosure: false,
+                                           hasCountryCross: false,
+                                           fuelUsed: 0.89,
+                                           legs: [{ hasTollRoad: false,
+                                                    hasBridge: true,
+                                                    destNarrative: 'Proceed to HOLLYWOOD, FL.',
+                                                    distance: 19.709,
+                                                    hasTimedRestriction: false,
+                                                    hasTunnel: false }] } })
     weather_at_eta = Forecast.new(data)
 
     roadtrip = RoadTrip.new(origin, destination, travel_time, weather_at_eta)
@@ -288,7 +288,5 @@ RSpec.describe RoadTrip do
     expect(roadtrip.start_city).to be_a(String)
     expect(roadtrip.travel_time).to be_a(String)
     expect(roadtrip.weather_at_eta).to be_a(Hash)
-    expect(roadtrip.weather_at_eta).to have_key(:temperature)
-    expect(roadtrip.weather_at_eta).to have_key(:conditions)
   end
 end

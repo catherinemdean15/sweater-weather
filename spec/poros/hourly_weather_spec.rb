@@ -21,6 +21,6 @@ RSpec.describe HourlyWeather do
     expect(hourly_weather).to have_attributes(conditions: 'overcast clouds',
                                               icon: '04d',
                                               temperature: 57.33,
-                                              time: '09:00:00')
+                                              time: '04:00:00')
   end
 end
