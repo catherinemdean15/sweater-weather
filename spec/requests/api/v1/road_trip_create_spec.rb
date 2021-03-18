@@ -2,15 +2,16 @@ require 'rails_helper'
 
 describe 'Road Trip API' do
   it 'returns road trip information', :vcr do
-    User.create!(email: 'whatever@example.com', password: 'password', api_key: 'jgn983hy48thw9begh98h4539h4')
+    user = User.create!(email: 'whatever@example.com', password: 'password')
 
     data = {
-            "origin": "Denver,CO",
-            "destination": "Pueblo,CO",
-            "api_key": "jgn983hy48thw9begh98h4539h4"
-}
-    headers = { "CONTENT_TYPE" => "application/json" }
+      "origin": 'Denver,CO',
+      "destination": 'Pueblo,CO',
+      "api_key": user.api_key
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json' }
     post api_v1_road_trip_index_path, params: data
+
     expect(response).to be_successful
 
     roadtrip = JSON.parse(response.body, symbolize_names: true)[:data]
@@ -36,11 +37,11 @@ describe 'Road Trip API' do
     User.create!(email: 'whatever@example.com', password: 'password', api_key: 'jgn983hy48thw9begh98h4539h4')
 
     data = {
-            "origin": "Denver,CO",
-            "destination": "Pueblo,CO",
-            "api_key": "this is an invalid api key"
-}
-    headers = { "CONTENT_TYPE" => "application/json" }
+      "origin": 'Denver,CO',
+      "destination": 'Pueblo,CO',
+      "api_key": 'this is an invalid api key'
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json' }
     post api_v1_road_trip_index_path, params: data
     expect(response).to_not be_successful
 
@@ -54,11 +55,11 @@ describe 'Road Trip API' do
     User.create!(email: 'whatever@example.com', password: 'password', api_key: 'jgn983hy48thw9begh98h4539h4')
 
     data = {
-            "origin": "Denver,CO",
-            "destination": "Pueblo,CO",
-            "api_key": ""
-}
-    headers = { "CONTENT_TYPE" => "application/json" }
+      "origin": 'Denver,CO',
+      "destination": 'Pueblo,CO',
+      "api_key": ''
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json' }
     post api_v1_road_trip_index_path, params: data
     expect(response).to_not be_successful
 
@@ -68,14 +69,14 @@ describe 'Road Trip API' do
     expect(error[:error]).to eq('valid api key is required')
   end
 
-  it "returns a message when travel is impossible by car", :vcr do
-    User.create!(email: 'whatever@example.com', password: 'password', api_key: 'jgn983hy48thw9begh98h4539h4')
+  it 'returns a message when travel is impossible by car', :vcr do
+    user = User.create!(email: 'whatever@example.com', password: 'password')
 
     data = {
-            "origin": "Denver,CO",
-            "destination": "Honolulu, HI",
-            "api_key": "jgn983hy48thw9begh98h4539h4"
-}
+      "origin": 'Denver,CO',
+      "destination": 'Honolulu, HI',
+      "api_key": user.api_key
+    }
     post api_v1_road_trip_index_path, params: data
     expect(response).to be_successful
 
@@ -94,14 +95,14 @@ describe 'Road Trip API' do
   end
 
   it 'returns road trip information over long distances', :vcr do
-    User.create!(email: 'whatever@example.com', password: 'password', api_key: 'jgn983hy48thw9begh98h4539h4')
+    user = User.create!(email: 'whatever@example.com', password: 'password')
 
     data = {
-            "origin": "Los Angeles,CA",
-            "destination": "New York City,NY",
-            "api_key": "jgn983hy48thw9begh98h4539h4"
-}
-    headers = { "CONTENT_TYPE" => "application/json" }
+      "origin": 'Los Angeles,CA',
+      "destination": 'New York City,NY',
+      "api_key": user.api_key
+    }
+    headers = { 'CONTENT_TYPE' => 'application/json' }
     post api_v1_road_trip_index_path, params: data
     expect(response).to be_successful
 
