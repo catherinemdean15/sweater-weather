@@ -280,13 +280,5 @@ RSpec.describe RoadTrip do
                                                     hasTimedRestriction: false,
                                                     hasTunnel: false }] } })
     weather_at_eta = Forecast.new(data)
-
-    roadtrip = RoadTrip.new(origin, destination, travel_time, weather_at_eta)
-    expect(roadtrip).to be_a(RoadTrip)
-    expect(roadtrip.id).to eq(nil)
-    expect(roadtrip.end_city).to be_a(String)
-    expect(roadtrip.start_city).to be_a(String)
-    expect(roadtrip.travel_time).to be_a(String)
-    expect(roadtrip.weather_at_eta).to be_a(Hash)
   end
 end
