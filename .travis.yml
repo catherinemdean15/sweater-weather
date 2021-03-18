@@ -15,7 +15,7 @@ deploy:
   app: enigmatic-escarpment-53306
   run: rails db:migrate
   on:
-    branch: main
+    repo: catherinemdean15/sweater-weather
   skip_cleanup: 'true'
 env:
   global:
