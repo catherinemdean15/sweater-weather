@@ -12,7 +12,7 @@ deploy:
   provider: heroku
   api_key:
     secure: TeWpIjHXOZKx3ZhREkyZsN2TqVpVF/8iMjDXeceR9aT1ZZvxpPyFfGJRGLABt0pz3sze0iCTolndQRhpmLmjPKVrYd40OukyQoM9yE1EOimcNDN/9IXUrv6fm8ld63Mx5YSp/mNMzs9UiLeJv2sKIIn0c1c9uP2hGLvFe+Njnc+Qb1IBj8dWciCRpr0+2AccmuxpbvevxfhMNL+5Tv1XNNVv33odL2Y3EvmbqrR7lt1Vbnj7Gwogub/8E6h1o5ZGFqNxRnJJDbpLj6BH60ZHluSfNm9X4Kc/R/pqGJ0EzOybh3MLB+aYbO3/bgnfYMOK7Ez0S8xH3bMrC3Y8bTF6Fl8fjSdndGCTkcfGwkgRhUDRQJAm3jinMUbL7UWdDLIPMbKPsev1aGo76Zeg2Lf/Zodt9aUjl8SHy2KJI18lB1s4UKT0cCayFMRCtFT4LMAD1AQBRfi1uKYbf1v3dQY1ktWqbw+ldBeW5n3d9ADWOWtoJh/VEikuap8n31hnUIr82Kndh3tDDQR0eV9Q9vhM1Lou9B3cyTaIjKsnY5550X8cmMwq/3BMX2Huxh1HU5i6bkgIm5/mME0Y7x06wmDEDqFCdnqoY9igOHujaclsv3b7czg6+fS6gehTJfD0X8E4fBowv+1bkpL38GPCNDj8WC1g56pX8zHpr9lq0VRYihU=
-  app: jules-api
+  app: sweater-weather
   run: rails db:migrate
   on:
     branch: main
