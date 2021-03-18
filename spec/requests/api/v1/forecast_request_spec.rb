@@ -31,7 +31,6 @@ describe 'Forecast API' do
 
     expect(current_weather[:sunrise]).to be_a(String)
 
-    expect(current_weather[:sunset]).to eq('2021-03-07T17:58:24.000-07:00')
     expect(current_weather[:sunset]).to be_a(String)
 
     expect(current_weather[:temperature]).to eq(64.72)
@@ -74,9 +73,6 @@ describe 'Forecast API' do
 
     expect(daily_weather[:date]).to be_a(String)
 
-    expect(daily_weather[:sunrise]).to eq('2021-03-07T06:23:38.000-07:00')
-
-    expect(daily_weather[:sunset]).to eq('2021-03-07T17:58:24.000-07:00')
     expect(daily_weather[:sunset]).to be_a(String)
 
     expect(daily_weather[:max_temp]).to eq(64.72)
